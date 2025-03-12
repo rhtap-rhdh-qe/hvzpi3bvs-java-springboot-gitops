@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: hvzpi3bvs-java-springboot-gitops
+  description: This is GitOps manifest for hvzpi3bvs-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=hvzpi3bvs-java-springboot
+    backstage.io/kubernetes-id: hvzpi3bvs-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: hvzpi3bvs-java-springboot   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:hvzpi3bvs-java-springboot
